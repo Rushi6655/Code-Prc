@@ -1,0 +1,56 @@
+
+:root {
+    --blue: rgb(73 73 255);
+    --white: #ffffff;
+    --black: #000000;
+  }
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+}
+.sidebar-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    box-shadow: -6px 0px 19px var(--black);
+    color: var(--black);
+    background-color: var(--blue);
+}
+.sidebar-wrap ul{
+    margin-top: 50px;
+}
+.sidebar-wrap ul li {
+    list-style: none;
+    text-decoration: none;
+    padding: 5px 15px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--white);
+    border-radius: 10px 0px 0px 10px;
+}
+/*sidevbar active bg start*/
+.active{
+    background-color: var(--white);
+    color: var(--black) !important;
+}
+.active::after,
+.active::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+}
+.active::after {
+    top: -20px;
+    background: radial-gradient(circle at top left, var(--blue) 20px, var(--white) 11px);
+}
+.active::before {
+    bottom: -20px;
+    background: radial-gradient(circle at bottom left, var(--blue) 20px, var(--white) 11px);
+}
+/*sidevbar active bg end*/

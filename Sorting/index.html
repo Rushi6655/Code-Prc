@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #myTable{
+        width: 80vw;
+    }
+  </style>
+  <body>
+    <table class="myTable">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Name</th>
+          <th>Num</th>
+          <th>Col2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" id="checkAction" /></td>
+          <td>a</td>
+          <td>($10,000.98)</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkAction" /></td>
+          <td>b</td>
+          <td>($11,000.00)</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkAction" /></td>
+          <td>c</td>
+          <td>($9,000.98)</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkAction" /></td>
+          <td>d</td>
+          <td>($12,000.54)</td>
+          <td>Z</td>
+        </tr>
+      </tbody>
+    </table>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+jQuery.fn.dataTableExt.oSort["customNumber-desc"] = function(x, y) {
+  return x < y;
+};
+
+jQuery.fn.dataTableExt.oSort["customNumber-asc"] = function(x, y) {
+  return x > y;
+}
+
+jQuery.fn.dataTableExt.oSort["customNumber-pre"] = function(num) {
+    console.log(num.replace(/[\(\)]/g,'').replace(',','').replace('$',''));
+    return parseFloat(num.replace(/[\(\)]/g,'').replace(',','').replace('$',''));
+}
+
+$(document).on("change","#checkAction",function(event){
+  console.log($(this));
+})
+
+var dt = $(".myTable").DataTable({
+  "scrollX": true,
+  "columnDefs": [{
+    "type": "customNumber",
+    "sortable": true,
+    "targets": [1]
+  }, {
+    "searchable": false,
+    "targets": [0]
+  }],
+  "drawCallback":function(){
+    let trs=document.querySelectorAll('.myTable tr');
+    let count=0;
+    trs.forEach(tr=>{
+      console.log(tr);
+      if($(tr).hasClass('odd')){
+        $(tr).css("background-color","blue");
+      }
+      
+    })
+  },
+  "pageLength":2,
+});
+</script>
+</body>
+</html>

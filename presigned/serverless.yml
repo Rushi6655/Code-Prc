@@ -1,0 +1,27 @@
+
+
+service: presigned
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  resource: 
+  runtime: nodejs12.x
+  region: ap-southeast-1
+
+
+functions:
+  getS3presignedURL:
+    handler: handler.getS3presignedURL
+    events:
+      -http:
+        path: getS3presignedURL
+        method: post
+
+resources:
+  Resources:
+    privateuploadsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: pam-parmeshwar

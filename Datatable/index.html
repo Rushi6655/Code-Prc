@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="Dtable" class="table">
+      <thead>
+        <th>sr.no</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>start</th>
+        <th>end</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="filterbtn" class="btn btn-primary">Filter</button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Import jQuery before export.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+
+    <!--Data Table-->
+    <script
+      type="text/javascript"
+      src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"
+    ></script>
+
+    <script>
+      let data = [
+        {
+          srNo: 1,
+          name: "rushi",
+          last: "shelke",
+          start: "10-01-2022",
+          end: "10-04-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 1,
+          name: "rushi",
+          last: "shelke",
+          start: "10-01-2022",
+          end: "10-04-2022",
+        },
+        {
+          srNo: 1,
+          name: "rushi",
+          last: "shelke",
+          start: "10-01-2022",
+          end: "10-04-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+        {
+          srNo: 11,
+          name: "abhi",
+          last: "munde",
+          start: "10-01-2022",
+          end: "10-04-2022",
+        },
+        {
+          srNo: 2,
+          name: "abhi",
+          last: "munde",
+          start: "10-04-2022",
+          end: "10-05-2022",
+        },
+      ];
+
+      let startD;
+      let endD;
+
+      $(window).on("load", function () {
+
+        console.log("page loaded...");
+        $("#Dtable").DataTable({
+          pagingType: "full_numbers",
+          data: data,
+          columns: [
+            {
+              data: "srNo",
+            },
+            {
+              data: "name",
+            },
+            {
+              data: "last",
+            },
+            {
+              data: function(col){
+                return '<a>'+col.start+'</a>';
+              },
+            },
+            {
+              data: "end",
+            },
+          ],
+         
+        });
+        $("#Dtable").DataTable.ext.search.push(function (settings, data, dataIndex) {
+          if (startD && endD) { 
+                debugger
+                let from = new Date(data[3].trim().split("-").reverse().join("-"));
+                let to = new Date( data[4].trim().split("-").reverse().join("-"));
+                //apply your logic according to conditions
+                if (startD < from && endD > to) {
+                  return false;
+                }else{
+                  return true;
+                }
+              }else{
+                return true;
+              }
+        });
+      });
+
+      $("#filterbtn").on("click", function () {
+        // temp dates---
+        let d1 = "09-01-2022";
+        let d2 = "10-05-2022";
+
+        //set the dates from inpute feilds-----
+        startD = new Date(d1.split("-").reverse().join("-"));
+        endD = new Date(d2.split("-").reverse().join("-"));
+
+        // calling draw to re render
+        $("#Dtable").DataTable().draw();
+      });
+    </script>
+  </body>
+</html>
