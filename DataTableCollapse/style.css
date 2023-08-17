@@ -116,3 +116,52 @@ body {
 .expand-active {
     height: auto;
 }
+.dataTables_paginate{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    position: relative;
+    justify-content: end;
+    padding-right: 10px;
+    position: relative;
+    right: -472px;
+    top: -28px;
+}
+.dataTables_paginate span{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+.paginate_button{
+    cursor: pointer;
+}
+.previous ,.next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+#mytable_info{
+    position: relative;
+    left: -501px;
+    top: 0;
+}
+.current{
+    background-color:#0d6efd !important;
+    color: rgb(255, 255, 255) !important;
+}
+.dataTables_paginate span .paginate_button {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    color: #0d6efd;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px #a7a7a7;
+    border: 1px solid #cfcfcf;
+    margin: 4px;
+}
