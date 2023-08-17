@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 50px;
+}
+
+.dataTables_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+#mytable,
+#mytable1  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100% !important;
+    padding: 10px;
+}
+
+#mytable thead tr{
+    background-color: #3535ff;
+    color: white;
+    border-radius: 1px 0px 10px 10px;
+}
+
+#mytable1 thead tr {
+    background-color:rgb(255, 253, 195) !important;
+    color: rgb(0, 0, 0);
+    border-radius: 1px 0px 10px 10px;
+}
+
+#mytable thead,
+#mytable tbody,
+#mytable1 thead,
+#mytable1 tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+}
+
+#mytable tbody tr,
+#mytable thead tr,
+#mytable1 tbody tr,
+#mytable1 thead tr  {
+    display: flex;
+    flex-direction: row;
+    width: 100% !important;
+}
+
+#mytable thead th:nth-child(1),
+#mytable thead th:nth-child(2),
+#mytable thead th:nth-child(3) {
+    width: calc(100% / 3) !important;
+}
+#mytable1 thead th:nth-child(1),
+#mytable1 thead th:nth-child(2){
+    width: calc(100% / 2) !important;
+}
+
+#mytable tbody td:nth-child(1),
+#mytable tbody td:nth-child(2),
+#mytable tbody td:nth-child(3) {
+    width: calc(100% / 3) !important;
+}
+#mytable1 tbody td:nth-child(1),
+#mytable1 tbody td:nth-child(2) {
+    width: calc(100% / 2) !important;
+}
+
+.dataTables_length {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: -30px;
+}
+
+.dataTables_filter {
+    position: absolute;
+    right: 0px;
+    top: -35px;
+}
+
+.expand  {
+    width: 100%;
+    background-color: rgb(250 250 250);
+    height: 0px;
+    transition: all 2s ease;
+    font-weight: 400;
+    font-size: small;
+    border: 1px solid rgb(36, 91, 255);
+}
+.expand table thead tr{
+    background-color: #b35647 !important;
+    color: white;
+    border-radius: 1px 0px 10px 10px;
+}
+.expand1 {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 0px;
+    transition: all 2s ease;
+    font-weight: 400;
+    font-size: small;
+    border: 1px solid rgb(255, 208, 36);
+}
+
+.expand-active {
+    height: auto;
+}

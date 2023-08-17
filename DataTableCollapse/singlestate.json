@@ -1,0 +1,22 @@
+{
+    "sName": "Maharashtra",
+    "sId": 1,
+    "cities": [
+        {
+            "name": "Pune",
+            "id": 1
+        },
+        {
+            "name": "Nashik",
+            "id": 2
+        },
+        {
+            "name": "Nagar",
+            "id": 3
+        },
+        {
+            "name": "Mumbai",
+            "id": 4
+        }
+    ]
+}

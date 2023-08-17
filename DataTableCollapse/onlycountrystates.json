@@ -1,0 +1,26 @@
+[
+    {
+        "cName": "India",
+        "cId": 1,
+        "sName": "Karnatak",
+        "sId": 2
+    },
+    {
+        "cName": "India",
+        "cId": 1,
+        "sName": "Maharashtra",
+        "sId": 1
+    },
+    {
+        "cName": "Newzeland",
+        "cId": 2,
+        "sName": "NewzelandState1",
+        "sId": 1
+    },
+    {
+        "cName": "Newzeland",
+        "cId": 2,
+        "sName": "NewzelandState2",
+        "sId": 2
+    }
+]

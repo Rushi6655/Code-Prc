@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+      }
+      #Dtable {
+        width: 80vw;
+        height: auto;
+      }
+      #Dtable thead {
+        background: #0c7dff;
+        color: aliceblue;
+      }
+      #Dtable th,
+      td {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="Dtable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Population</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>America</td>
+          <td>100000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Import jQuery before export.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+    <!--Data Table-->
+    <script
+      type="text/javascript"
+      src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        let data=[];
+        fetch("https://www.universal-tutorial.com/api/getaccesstoken", {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "api-token":
+              "NNBeTuIRs241qwJ2_02dvDQ-Z1Z9XHpbtLdY30yOq4xOA9TCEDDIW4FijdERTzWzS2I",
+            "user-email": "rushishelke2000@gmail.com",
+          },
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            console.log(res);
+            tocken = res.auth_token;
+            fetch("https://www.universal-tutorial.com/api/countries/", {
+              method: "GET",
+              headers: {
+                Authorization:
+                  "Bearer "+res.auth_token,
+                Accept: "application/json",
+              },
+            }).then(r=>r.json())
+            .then(r=>{
+                console.log(r);
+                data=r;
+                $("#Dtable").DataTable().clear().rows.add(r).draw();
+            }).catch(er=>console.log("error inside",er))
+          })
+          .catch((e) => {
+            console.log("error", e);
+          });
+
+        console.log("ready...");
+        $("#Dtable").DataTable({
+          pagingType: "full_numbers",
+          data : data,
+          columns:[
+            {
+                data:"country_name",
+            },
+            {
+                data:"country_short_name",
+            }
+          ]
+        });
+      });
+    </script>
+  </body>
+</html>
